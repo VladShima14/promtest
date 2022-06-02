@@ -1,6 +1,6 @@
-from pages.base_page import BasePage
-from pages.favorites_page import FavoritesPage
-from pages.product_page import ProductPage
+from src.pages.base_page import BasePage
+from src.pages.favorites_page import FavoritesPage
+from src.pages.product_page import ProductPage
 
 
 class Application(BasePage):
