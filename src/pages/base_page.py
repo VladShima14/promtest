@@ -32,9 +32,21 @@ class BasePage:
         return True
 
     def login_use_email(self, email, password):
-        self.click_on_element(*LoginFormLocators.SIGN_IN_BUTTON)
-        self.click_on_element(*LoginFormLocators.SIGN_IN_WITH_EMAIL_BUTTON)
-        self.fill_field(*LoginFormLocators.EMAIL_INPUT_FIELD, email)
-        self.click_on_element(*LoginFormLocators.SUBMIT_SIGN_IN_WITH_EMAIL_BUTTON)
-        self.fill_field(*LoginFormLocators.PASSWORD_INPUT_FIELD, password)
-        self.click_on_element(*LoginFormLocators.SUBMIT_SIGN_IN_AFTER_PASSWORD_INPUT)
+        self.click_on_element(
+            *LoginFormLocators.SIGN_IN_BUTTON
+        )
+        self.click_on_element(
+            *LoginFormLocators.SIGN_IN_WITH_EMAIL_BUTTON
+        )
+        self.fill_field(
+            *LoginFormLocators.EMAIL_INPUT_FIELD, email
+        )
+        self.click_on_element(
+            *LoginFormLocators.SUBMIT_SIGN_IN_WITH_EMAIL_BUTTON
+        )
+        self.fill_field(
+            *LoginFormLocators.PASSWORD_INPUT_FIELD, password
+        )
+        self.click_on_element(
+            *LoginFormLocators.SUBMIT_SIGN_IN_AFTER_PASSWORD_INPUT
+        )

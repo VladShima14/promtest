@@ -1,21 +1,12 @@
 import pytest
 import allure
 from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
 from src.pages.app import Application
-
-
-# @pytest.fixture(scope="function")
-# def browser():
-#     browser = webdriver.Chrome()
-#     browser.maximize_window()
-#     yield browser
-#     browser.quit()
 
 
 @pytest.fixture(scope="function")
 def browser():
-    browser = webdriver.Chrome(ChromeDriverManager().install())
+    browser = webdriver.Chrome()
     browser.maximize_window()
     yield browser
     browser.quit()

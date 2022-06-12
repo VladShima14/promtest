@@ -11,8 +11,12 @@ def test_success_add_product_in_favorites(app, link):
     product = app.product_page
     with allure.step(f'Open product page with link: {link}'):
         product.open(link)
-    with allure.step(f'Sing in with user data: {UserData.EMAIL}, {UserData.PASSWORD}'):
-        product.login_use_email(email=UserData.EMAIL, password=UserData.PASSWORD)
+    with allure.step(f'Sing in with user data: {UserData.EMAIL}, '
+                     f'{UserData.PASSWORD}'):
+        product.login_use_email(
+            email=UserData.EMAIL,
+            password=UserData.PASSWORD
+        )
     with allure.step('Get product name'):
         name_of_product = product.get_name_of_product()
     with allure.step('Click on favorite icon'):
@@ -20,4 +24,6 @@ def test_success_add_product_in_favorites(app, link):
     favorites_page = app.favorites_page
     with allure.step('Open favorites page'):
         favorites_page.open(Links.FAVORITES_PRODUCT_PAGE)
-    favorites_page.check_product_on_favorite_page(name_of_product=name_of_product)
+    favorites_page.check_product_on_favorite_page(
+        name_of_product=name_of_product
+    )
